@@ -1,0 +1,27 @@
+- name : rds launcher
+  hosts : localhost
+  connection : local
+  tasks:
+  - name : launching rds # name of the task
+    rds:
+      aws_access_key:   # aws_access_key
+      aws_secret_key:  #aws_secret_key
+      command: create # command to spin off rds instance
+      instance_name: scriptingfinal651 #name of the instance
+      db_engine: MySQL #database engine 
+      engine_version: 5.7.26 #engine version 
+      size: 10 # size of the database
+      instance_type: db.t3.micro #instance type 
+      username : mysql_admin #database username
+      password :  #database password
+      region: "us-east-1" # hosting region
+      vpc_security_groups : sg- #vpc_of the security group created 
+      wait : yes  #wait time
+      wait_timeout: 600 
+      tags:
+         Environment: testing
+         Application: cms
+ 
+
+
+

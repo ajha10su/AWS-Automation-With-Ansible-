@@ -1,0 +1,14 @@
+- name : s3 launcher
+  hosts : localhost
+  connection : local
+  tasks:
+  - name : launching S3
+    aws_s3:
+       aws_access_key : 
+       aws_secret_key : 
+       bucket: projectfinal5651 
+       mode : create
+       region : "us-east-1"
+       
+
+   
