@@ -1,0 +1,20 @@
+- name : ec2 launcher
+  hosts : localhost  
+  connection : local
+  tasks:
+  - name : launching ec2 # name of the task
+    ec2:
+       aws_access_key :  # aws_access_key
+       aws_secret_key :  #aws_secret_key
+       instance_type : t2.micro # type of the instance we want 
+       key_name: test # keypair 
+       image : ami-00ddb0e5626798373 #image
+       region : us-east-1 # region 
+       assign_public_ip : yes
+       group : ansible_security_group # security group 
+       count : 1 # how many instance we want
+       vpc_subnet_id : subnet- # subnet id 
+       wait : yes # wait till the instance is created
+       
+
+
